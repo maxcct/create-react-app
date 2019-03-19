@@ -106,35 +106,15 @@ module.exports = function(
     test: 'react-scripts test',
     eject: 'react-scripts eject',
     eslint: 'eslint src',
-    storybook: 'start-storybook -p 9009 -s public',
-    'build-storybook': 'build-storybook -s public',
-    precommit: 'lint-staged && yarn test',
   };
 
   // Setup the eslint config
   appPackage.eslintConfig = {
     env: {
       browser: true,
-      'jest/globals': true,
     },
-    globals: {
-      Canvallax: true,
-    },
-    extends: [
-      '@dangerfarms/eslint-config-df',
-      'prettier',
-      'plugin:cypress/recommended',
-    ],
+    extends: ['@dangerfarms/eslint-config-df', 'prettier'],
     parser: 'babel-eslint',
-    plugins: ['jest'],
-    rules: {
-      'arrow-parens': 'off',
-      'react/jsx-one-expression-per-line': 'off',
-      'unicorn/filename-case': 'off',
-      'unicorn/no-abusive-eslint-disable': 'off',
-      'class-methods-use-this': 'off',
-      'react/no-multi-comp': 'off',
-    },
   };
 
   // Setup the lint-staged config
@@ -157,7 +137,7 @@ module.exports = function(
   // Setup the husky config
   appPackage.husky = {
     hooks: {
-      'pre-commit': 'lint-staged',
+      'pre-commit': 'lint-staged && yarn test',
     },
   };
 
@@ -253,6 +233,21 @@ module.exports = function(
       console.error(`\`${command} ${args.join(' ')}\` failed`);
       return;
     }
+  }
+
+  console.log('Installing Storybook...');
+
+  console.log();
+
+  const storybookProc = spawn.sync('npx', [
+    '-p',
+    '@storybook/cli',
+    'sb',
+    'init',
+  ]);
+  if (storybookProc.status !== 0) {
+    console.error('Storybook installation failed');
+    return;
   }
 
   if (useTypeScript) {
