@@ -95,92 +95,75 @@ module.exports = function(
 
   // Setup devDependencies
   appPackage.devDependencies = {
-    "husky": "^1.3.1",
-    "lerna": "^3.13.1",
-    "lint-staged": "^8.1.5"
+    husky: '^1.3.1',
+    'lint-staged': '^8.1.5',
   };
 
   // Setup the script rules
   appPackage.scripts = {
-    "start": 'react-scripts start',
-    "build": 'react-scripts build',
-    "test": 'react-scripts test',
-    "eject": 'react-scripts eject',
-    "eslint": "eslint src",
-    "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public",
-    "precommit": "lint-staged && yarn test"
+    start: 'react-scripts start',
+    build: 'react-scripts build',
+    test: 'react-scripts test',
+    eject: 'react-scripts eject',
+    eslint: 'eslint src',
+    storybook: 'start-storybook -p 9009 -s public',
+    'build-storybook': 'build-storybook -s public',
+    precommit: 'lint-staged && yarn test',
   };
 
   // Setup the eslint config
   appPackage.eslintConfig = {
-    "env": {
-      "browser": true,
-      "jest/globals": true
+    env: {
+      browser: true,
+      'jest/globals': true,
     },
-    "globals": {
-      "Canvallax": true
+    globals: {
+      Canvallax: true,
     },
-    "extends": [
-      "@dangerfarms/eslint-config-df",
-      "prettier",
-      "plugin:cypress/recommended"
+    extends: [
+      '@dangerfarms/eslint-config-df',
+      'prettier',
+      'plugin:cypress/recommended',
     ],
-    "parser": "babel-eslint",
-    "plugins": [
-      "jest"
-    ],
-    "rules": {
-      "arrow-parens": "off",
-      "react/jsx-one-expression-per-line": "off",
-      "unicorn/filename-case": "off",
-      "unicorn/no-abusive-eslint-disable": "off",
-      "class-methods-use-this": "off",
-      "react/no-multi-comp": "off"
-    }
+    parser: 'babel-eslint',
+    plugins: ['jest'],
+    rules: {
+      'arrow-parens': 'off',
+      'react/jsx-one-expression-per-line': 'off',
+      'unicorn/filename-case': 'off',
+      'unicorn/no-abusive-eslint-disable': 'off',
+      'class-methods-use-this': 'off',
+      'react/no-multi-comp': 'off',
+    },
   };
 
   // Setup the lint-staged config
-  appPackage["lint-staged"] = {
-    "src/**/*.css": [
-      "prettier --write",
-      "stylelint --fix",
-      "git add"
-    ],
-    "*.md": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.js": [
-      "prettier --write",
-      "eslint --max-warnings=0 --fix",
-      "git add"
-    ],
-    "*.tf": [
-      "terraform fmt",
-      "git add"
-    ]
+  appPackage['lint-staged'] = {
+    'src/**/*.css': ['prettier --write', 'stylelint --fix', 'git add'],
+    '*.md': ['prettier --write', 'git add'],
+    '*.js': ['prettier --write', 'eslint --max-warnings=0 --fix', 'git add'],
+    '*.tf': ['terraform fmt', 'git add'],
   };
 
   // Setup the stylelint config
   appPackage.stylelint = {
-    "extends": [
-      "stylelint-config-standard",
-      "stylelint-config-css-modules",
-      "stylelint-config-prettier"
-    ]
+    extends: [
+      'stylelint-config-standard',
+      'stylelint-config-css-modules',
+      'stylelint-config-prettier',
+    ],
   };
 
   // Setup the husky config
   appPackage.husky = {
-    "hooks": {
-      "pre-commit": "lint-staged && lerna run --concurrency 1 --stream precommit"
-    }
+    hooks: {
+      'pre-commit': 'lint-staged',
+    },
   };
 
   // Setup the prettier config
   appPackage.prettier = {
-    "trailingComma": "all"
+    trailingComma: 'all',
   };
 
   // Setup the browsers list
