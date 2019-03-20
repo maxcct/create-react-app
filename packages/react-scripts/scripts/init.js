@@ -246,9 +246,7 @@ module.exports = function(
     return;
   }
 
-  console.log();
   console.log('Installing Storybook...');
-  console.log();
 
   const storybookProc = spawn.sync('npx', [
     '-p',
@@ -280,10 +278,7 @@ module.exports = function(
     return;
   }
 
-  execSync('git add -A', { stdio: 'ignore' });
-  execSync('git commit -m "Install Husky and its git hooks"', {
-    stdio: 'ignore',
-  });
+  spawn.sync('git', ['commit', '-am', '"Install Husky and its git hooks"']);
 
   // Display the most elegant way to cd.
   // This needs to handle an undefined originalDirectory for
