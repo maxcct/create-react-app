@@ -93,15 +93,6 @@ module.exports = function(
 
   const useTypeScript = appPackage.dependencies['typescript'] != null;
 
-  // Setup devDependencies
-  appPackage.devDependencies = {
-    cypress: '^3.1.5',
-    jest: '24.5.0',
-    'lint-staged': '^8.1.5',
-    lodash: '^4.17.11',
-    'prop-types': '^15.7.2',
-  };
-
   // Setup the script rules
   appPackage.scripts = {
     start: 'react-scripts start',
@@ -239,6 +230,23 @@ module.exports = function(
   }
 
   console.log();
+  console.log('Installing explicit project dependencies...');
+  console.log();
+
+  const explicitDependenciesProc = spawn.sync('yarn', [
+    'add',
+    'cypress',
+    'jest',
+    'lint-staged',
+    'lodash',
+    'prop-types',
+  ]);
+  if (explicitDependenciesProc.status !== 0) {
+    console.error('Installation of explicit project dependencies failed');
+    return;
+  }
+
+  console.log();
   console.log('Installing Storybook...');
   console.log();
 
@@ -271,6 +279,11 @@ module.exports = function(
     console.error('Husky installation failed');
     return;
   }
+
+  execSync('git add -A', { stdio: 'ignore' });
+  execSync('git commit -m "Install Husky and its git hooks"', {
+    stdio: 'ignore',
+  });
 
   // Display the most elegant way to cd.
   // This needs to handle an undefined originalDirectory for
