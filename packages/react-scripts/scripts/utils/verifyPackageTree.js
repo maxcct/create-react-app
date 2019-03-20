@@ -24,7 +24,6 @@ function verifyPackageTree() {
     'babel-jest',
     'babel-loader',
     'eslint',
-    'jest',
     'webpack',
     'webpack-dev-server',
   ];
