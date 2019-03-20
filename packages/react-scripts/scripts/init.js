@@ -238,6 +238,7 @@ module.exports = function(
     }
   }
 
+  console.log();
   console.log('Installing Storybook...');
   console.log();
 
@@ -259,6 +260,7 @@ module.exports = function(
   if (tryGitInit(appPath)) {
     console.log();
     console.log('Initialized a git repository.');
+    console.log();
   }
 
   console.log('Installing Husky...');
