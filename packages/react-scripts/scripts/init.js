@@ -95,8 +95,12 @@ module.exports = function(
 
   // Setup devDependencies
   appPackage.devDependencies = {
+    cypress: '^3.1.5',
     husky: '^1.3.1',
+    jest: '24.5.0',
     'lint-staged': '^8.1.5',
+    lodash: '^4.17.11',
+    'prop-types': '^15.7.2',
   };
 
   // Setup the script rules
