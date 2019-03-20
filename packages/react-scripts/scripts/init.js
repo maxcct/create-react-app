@@ -96,7 +96,6 @@ module.exports = function(
   // Setup devDependencies
   appPackage.devDependencies = {
     cypress: '^3.1.5',
-    husky: '^1.3.1',
     jest: '24.5.0',
     'lint-staged': '^8.1.5',
     lodash: '^4.17.11',
@@ -240,7 +239,6 @@ module.exports = function(
   }
 
   console.log('Installing Storybook...');
-
   console.log();
 
   const storybookProc = spawn.sync('npx', [
@@ -261,6 +259,15 @@ module.exports = function(
   if (tryGitInit(appPath)) {
     console.log();
     console.log('Initialized a git repository.');
+  }
+
+  console.log('Installing Husky...');
+  console.log();
+
+  const huskyProc = spawn.sync('yarn', ['add', 'husky']);
+  if (huskyProc.status !== 0) {
+    console.error('Husky installation failed');
+    return;
   }
 
   // Display the most elegant way to cd.
