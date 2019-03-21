@@ -100,6 +100,7 @@ module.exports = function(
     test: 'react-scripts test',
     eject: 'react-scripts eject',
     eslint: 'eslint src',
+    storybook: 'start-storybook',
   };
 
   // Setup the eslint config
@@ -248,11 +249,11 @@ module.exports = function(
 
   console.log('Installing Storybook...');
 
-  const storybookProc = spawn.sync('npx', [
-    '-p',
-    '@storybook/cli',
-    'sb',
-    'init',
+  const storybookProc = spawn.sync('yarn', [
+    'add',
+    '@storybook/react',
+    '@storybook/addon-actions',
+    '@storybook/addon-links',
   ]);
   if (storybookProc.status !== 0) {
     console.error('Storybook installation failed');
