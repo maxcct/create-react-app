@@ -1,7 +1,13 @@
-# react-scripts
+# danger-farms-react-scripts
 
-This package includes scripts and configuration used by [Create React App](https://github.com/facebook/create-react-app).<br>
-Please refer to its documentation:
+This package includes scripts and configuration used by [Create React App](https://github.com/facebook/create-react-app).
+It has been customised in order to bootstrap Danger Farms projects. These modifications include different implicit and
+explicit dependencies, bespoke linting, Husky pre-commit hooks and a custom set up of Storybook.
+
+The forked [repository containing this package](https://gitlab.com/dangerfarms/create-react-app) should be kept in sync with [the upstream repo](https://github.com/facebook/create-react-app).
+[Here are instructions for syncing a fork](https://help.github.com/en/articles/syncing-a-fork).
+
+Please refer to the original documentation:
 
 - [Getting Started](https://facebook.github.io/create-react-app/docs/getting-started) – How to create a new app.
 - [User Guide](https://facebook.github.io/create-react-app/) – How to develop apps bootstrapped with Create React App.
