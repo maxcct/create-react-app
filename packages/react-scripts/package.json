@@ -1,6 +1,6 @@
 {
-  "name": "danger-farms-react-scripts",
-  "version": "0.1.1",
+  "name": "@dangerfarms/react-scripts",
+  "version": "0.1.0",
   "description": "Danger Farms customised version of react-scripts",
   "repository": "dangerfarms/create-react-app",
   "license": "MIT",

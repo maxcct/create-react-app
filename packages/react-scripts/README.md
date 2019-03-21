@@ -1,8 +1,8 @@
-# danger-farms-react-scripts
+# @dangerfarms/react-scripts
 
-In order to bootstrap a project using these scripts, run `npx create-react-app <app-name> --scripts-version danger-farms-react-scripts`.
+In order to bootstrap a project using these scripts, run `npx create-react-app <app-name> --scripts-version @dangerfarms/react-scripts`.
 
-To update the published version of `danger-farms-react-scripts`, increment the version number in the `package.json` file in the same
+To update the published version of `@dangerfarms/react-scripts`, increment the version number in the `package.json` file in the same
 directory as this README, then, also within the same directory, run `npm publish`'.
 
 Because Husky can only install git hooks once a repo has been initialised, the bootstrapped project will initially have
