@@ -3,7 +3,7 @@
 In order to bootstrap a project using these scripts, run `npx create-react-app <app-name> --scripts-version @dangerfarms/react-scripts`.
 
 To update the published version of `@dangerfarms/react-scripts`, increment the version number in the `package.json` file in the same
-directory as this README, then, also within the same directory, run `npm publish`'.
+directory as this README, then, also within the same directory, run `npm publish` (or `npm publish --access public` if necessary).
 
 Because Husky can only install git hooks once a repo has been initialised, the bootstrapped project will initially have
 uncommitted changes to `package.json` and `yarn.lock` caused by installing Husky after `git init` has run. Please commit them.
