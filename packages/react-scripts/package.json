@@ -2,7 +2,7 @@
   "name": "@dangerfarms/react-scripts",
   "version": "0.1.0",
   "description": "Danger Farms customised version of react-scripts",
-  "repository": "maxcct/create-react-app",
+  "repository": "dangerfarms/create-react-app",
   "license": "MIT",
   "engines": {
     "node": ">=8.10"
