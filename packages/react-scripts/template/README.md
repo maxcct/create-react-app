@@ -1,7 +1,7 @@
 This project was bootstrapped with a Danger Farms extension of [Create React App](https://github.com/maxcct/create-react-app).
 
 Because Husky can only install git hooks once a repo has been initialised, post-bootstrapping this project will have
-uncommitted changes to `package.json` and `yarn.lock` changes caused by installing Husky after `git init` has run.
+uncommitted changes to `package.json` and `yarn.lock` caused by installing Husky after `git init` has run.
 
 This project also bootstraps with an example `Button` component and accompanying Storybook story in `src/components/common`.
 
