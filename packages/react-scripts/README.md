@@ -1,5 +1,7 @@
 # danger-farms-react-scripts
 
+In order to bootstrap a project using these scripts, run `npx create-react-app <app-name> --scripts-version danger-farms-react-scripts`.
+
 This package includes scripts and configuration used by [Create React App](https://github.com/facebook/create-react-app).
 It has been customised in order to bootstrap Danger Farms projects. These modifications include different implicit and
 explicit dependencies, bespoke linting, Husky pre-commit hooks and a custom set up of Storybook.
